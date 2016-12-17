@@ -16,7 +16,7 @@ public class Client {
         RestTemplate template = new RestTemplate();
         ParameterizedTypeReference<List<Personne>> myBean = new ParameterizedTypeReference<List<Personne>>() {};
         ResponseEntity<List<Personne>> response = template.exchange("http://localhost:8080", HttpMethod.GET, null, myBean);
-        response.getBody().forEach(p-> System.out.println(p));
+        response.getBody().forEach(p -> System.out.println("personne recuperee" + p));
 
     }
 }
