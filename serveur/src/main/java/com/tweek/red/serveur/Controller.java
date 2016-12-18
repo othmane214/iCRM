@@ -1,10 +1,11 @@
 package com.tweek.red.serveur;
 
 import com.tweek.red.commun.Personne;
+import com.tweek.red.dao.PersonneDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -13,13 +14,13 @@ import java.util.List;
  */
 @RestController
 public class Controller {
+
+    @Autowired
+    private PersonneDao personneDao;
+
     @RequestMapping("/")
     public List<Personne> helloWorld(){
-        List<Personne> liste=new ArrayList<>();
-        for (int i = 0; i <5 ; i++) {
-            liste.add(new Personne("anonymous"+i,"anonymous"+i,i));
-
-        }
+        List<Personne> liste = personneDao.getAll();
         return liste;
     }
 }

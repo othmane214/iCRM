@@ -1,5 +1,6 @@
 var gulp=require("gulp")
 var tsc=require("gulp-typescript")
+var connect=require("gulp-connect")
 var destination="dist_client"
 var src="client-angular"
 var del=require("del")
@@ -31,5 +32,16 @@ gulp.task("node_modules",function(){
 
 gulp.task("clean",function(){
     del(destination+"/**")
+})
+
+gulp.task('server', function() {
+  connect.server({
+    root: 'dist_client/',
+    host: 'localhost',
+    port: 3000,
+    livereload: {
+      port: 35929
+    }
+  })
 })
 gulp.task("default",["clean","node_modules","compilation","lib","static"])

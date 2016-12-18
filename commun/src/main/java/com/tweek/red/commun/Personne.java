@@ -1,15 +1,27 @@
 package com.tweek.red.commun;
 
-import java.util.UUID;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 /**
  * Created by tweek on 16/12/16.
  */
+@Entity
+@Table(name = "Personne")
 public class Personne {
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
+    @Column
     private String nom;
+    @Column
     private String prenom;
+    @Column
     private int age;
+    @Column
+    private String email;
 
     public Personne() {
     }
@@ -50,6 +62,14 @@ public class Personne {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
