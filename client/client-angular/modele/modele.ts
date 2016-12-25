@@ -1,6 +1,6 @@
 exportinterfacePersonne {
     id:string,
-nom:string,
-prenom:string,
+lastName:string,
+firstName:string,
 email:string
 }

@@ -13,7 +13,7 @@ import 'rxjs/add/operator/catch';
   template: `<h1>Hello {{name}}</h1>
             <h2> Les personnes présentes sont : </h2>
             <ul>
-              <li *ngFor="let p of personnes">je suis {{p.nom}} {{p.prenom}}, j'ai {{p.age}} et voici mon email : {{p.email}} </li>
+              <li *ngFor="let p of personnes">je suis {{p.lastName}} {{p.firstName}}, j'ai {{p.age}} et voici mon email : {{p.email}} </li>
             </ul>
   `,
 })
