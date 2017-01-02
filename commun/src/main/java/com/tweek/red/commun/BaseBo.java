@@ -4,10 +4,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Created by tweek on 25/12/16.
  */
+@MappedSuperclass
 public class BaseBo {
     @Id
     @GeneratedValue(generator = "system-uuid")

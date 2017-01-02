@@ -1,6 +1,7 @@
 package com.tweek.red.serveur;
 
 import com.tweek.red.commun.User;
+import com.tweek.red.serveur.forms.Login;
 import com.tweek.red.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -17,7 +18,7 @@ import java.util.List;
  * Created by tweek on 16/12/16.
  */
 @RestController
-//@RequestMapping("/user")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -30,8 +31,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public User login(@RequestBody User input) {
-        User user = userService.login(input.getLogin(), input.getPassword());
+    public User login(@RequestBody Login form) {
+        User user = userService.login(form.getLogin(), form.getPassword());
         return user;
     }
 
