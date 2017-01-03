@@ -1,4 +1,4 @@
-package com.tweek.red.serveur;
+package com.tweek.red.serveur.controllers;
 
 import com.tweek.red.commun.User;
 import com.tweek.red.serveur.forms.Login;
